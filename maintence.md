@@ -12,8 +12,12 @@ Do code changes
 
 Commit
 
-Build, package and publish to `@azinformatica/pdfjs-dist`
+Build pdfjs-dist package
 
-```gulp publish```
+```gulp dist-install```
 
-Commit and push to remote git repo
+Commit and push to remote git repo (except changes in package.json and package-lock.json)
+
+Publish package `@azinformatica/pdfjs-dist` to npmjs
+
+```npm publish build/dist/ --access public```
