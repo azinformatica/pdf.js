@@ -176,7 +176,11 @@ function decodeScan(
             "Found EOI marker (0xFFD9) while parsing scan data"
           );
         }
-        throw new JpegError(
+        // workaround to parse images that are considered corrupt
+        // throw new JpegError(
+        //   `unexpected marker ${((bitsData << 8) | nextByte).toString(16)}`
+        // );
+        console.error(
           `unexpected marker ${((bitsData << 8) | nextByte).toString(16)}`
         );
       }
