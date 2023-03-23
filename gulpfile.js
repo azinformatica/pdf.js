@@ -66,8 +66,8 @@ const TYPESTEST_DIR = BUILD_DIR + "typestest/";
 const COMMON_WEB_FILES = ["web/images/*.{png,svg,gif,cur}", "web/debugger.js"];
 const MOZCENTRAL_DIFF_FILE = "mozcentral.diff";
 
-const REPO = "git@github.com:mozilla/pdf.js.git";
-const DIST_REPO_URL = "https://github.com/mozilla/pdfjs-dist";
+const REPO = "git@github.com:azinformatica/pdf.js.git";
+const DIST_REPO_URL = "https://github.com/azinformatica/pdfjs-dist";
 
 const builder = require("./external/builder/builder.js");
 
@@ -2000,11 +2000,11 @@ gulp.task(
 function packageBowerJson() {
   const VERSION = getVersionJSON().version;
 
-  const DIST_NAME = "pdfjs-dist";
-  const DIST_DESCRIPTION = "Generic build of Mozilla's PDF.js library.";
+  const DIST_NAME = "@azinformatica/pdfjs-dist";
+  const DIST_DESCRIPTION = "Generic build of Mozilla's PDF.js library. (FORK)";
   const DIST_KEYWORDS = ["Mozilla", "pdf", "pdf.js"];
-  const DIST_HOMEPAGE = "http://mozilla.github.io/pdf.js/";
-  const DIST_BUGS_URL = "https://github.com/mozilla/pdf.js/issues";
+  const DIST_HOMEPAGE = "https://github.com/azinformatica/pdf.js";
+  const DIST_BUGS_URL = "https://github.com/azinformatica/pdf.js/issues";
   const DIST_LICENSE = "Apache-2.0";
 
   const npmManifest = {
@@ -2063,12 +2063,12 @@ gulp.task(
     "minified-legacy",
     "types",
     function createDist() {
-      console.log();
-      console.log("### Cloning baseline distribution");
-
-      rimraf.sync(DIST_DIR);
-      mkdirp.sync(DIST_DIR);
-      safeSpawnSync("git", ["clone", "--depth", "1", DIST_REPO_URL, DIST_DIR]);
+      // console.log();
+      // console.log("### Cloning baseline distribution");
+      //
+      // rimraf.sync(DIST_DIR);
+      // mkdirp.sync(DIST_DIR);
+      // safeSpawnSync("git", ["clone", "--depth", "1", DIST_REPO_URL, DIST_DIR]);
 
       console.log();
       console.log("### Overwriting all files");
